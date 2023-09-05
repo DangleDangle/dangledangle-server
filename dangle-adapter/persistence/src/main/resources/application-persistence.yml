@@ -1,0 +1,28 @@
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+  datasource:
+    url: jdbc:h2:tcp://localhost/~/dangle
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  datasource:
+    url: ${DATASOURCE_URL}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: ${DATASOURCE_PASSWORD}
+    username: ${DATASOURCE_USERNAME}

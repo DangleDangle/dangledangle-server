@@ -1,0 +1,26 @@
+server:
+  port: 8080
+  shutdown: graceful
+
+spring:
+  application:
+    name: dangle-api
+  profiles:
+    include:
+      - http
+      - jpa
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  jackson:
+    property-naming-strategy: SNAKE_CASE
+  transaction:
+    default-timeout: 4
+
+swagger:
+  api:
+    version: 1.0
+    basePacakage: com.dangle.api
+    groupName: dangle-api
+    title: dangle-api
+    description: dangle-api

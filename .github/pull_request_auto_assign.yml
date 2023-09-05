@@ -1,0 +1,9 @@
+# https://github.com/kentaro-m/auto-assign-action
+addReviewers: true
+addAssignees: author
+
+reviewers:
+  - rilac1
+  - ktj1997
+
+numberOfReviewers: 0
