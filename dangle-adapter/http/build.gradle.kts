@@ -1,9 +1,9 @@
 dependencies {
     implementation(project(":dangle-common"))
     implementation(project(":dangle-domain"))
+    implementation(project(":dangle-usecase"))
 
-    implementation("org.springframework.cloud:spring-cloud-starter-openfeign")
-    implementation("org.springframework.cloud:spring-cloud-starter-circuitbreaker-resilience4j")
+    implementation("org.springframework.cloud:spring-cloud-starter-openfeign:4.0.3")
 }
 
 tasks.bootJar { enabled = false }
