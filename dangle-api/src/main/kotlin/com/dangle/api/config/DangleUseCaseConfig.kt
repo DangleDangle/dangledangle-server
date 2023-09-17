@@ -6,7 +6,6 @@ import com.dangle.usecase.shelter.port.`in`.command.ToggleBookmarkCommandUseCase
 import com.dangle.usecase.shelter.port.`in`.query.GetShelterQuery
 import com.dangle.usecase.shelter.port.`in`.query.GetShelterQueryUseCase
 import com.dangle.usecase.shelter.port.out.ShelterRepositoryPort
-import org.springframework.boot.context.properties.ConfigurationPropertiesScan
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.context.annotation.Import
