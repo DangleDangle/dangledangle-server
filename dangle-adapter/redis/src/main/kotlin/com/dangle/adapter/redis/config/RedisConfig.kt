@@ -1,6 +1,7 @@
 package com.dangle.adapter.redis.config
 
 import org.springframework.beans.factory.annotation.Value
+import org.springframework.boot.context.properties.ConfigurationPropertiesScan
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.data.redis.connection.RedisConnectionFactory
@@ -13,16 +14,18 @@ import org.springframework.data.redis.serializer.GenericJackson2JsonRedisSeriali
 import org.springframework.data.redis.serializer.StringRedisSerializer
 
 @Configuration
-class RedisConfig {
+@ConfigurationPropertiesScan
+class RedisConfig(
+    val redisConfiguration: RedisConfiguration,
+) {
     @Bean
-    fun redisConnectionFactory(
-        @Value("\${redis.host}") host: String,
-        @Value("\${redis.port}") port: Int,
-        @Value("\${redis.password}") password: String?,
-    ): RedisConnectionFactory {
+    fun redisConnectionFactory(): RedisConnectionFactory {
         return LettuceConnectionFactory(
-            RedisStandaloneConfiguration(host, port).apply {
-                this.password = RedisPassword.of(password)
+            RedisStandaloneConfiguration(
+                redisConfiguration.host,
+                redisConfiguration.port
+            ).apply {
+                this.password = RedisPassword.of(redisConfiguration.password)
             }
         )
     }
