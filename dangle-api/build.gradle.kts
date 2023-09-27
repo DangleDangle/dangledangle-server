@@ -3,6 +3,8 @@ dependencies {
     implementation(project(":dangle-domain"))
     implementation(project(":dangle-usecase"))
     implementation(project(":dangle-adapter-persistence"))
+    implementation(project(":dangle-adapter-redis"))
+    implementation(project(":dangle-adapter-http"))
 
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")

@@ -2,7 +2,7 @@ dependencies {
     implementation(project(":dangle-common"))
     implementation(project(":dangle-domain"))
 
-    implementation("org.springframework.boot:spring-boot-starter-data-redis")
+    api("org.springframework.boot:spring-boot-starter-data-redis")
 }
 
 tasks.bootJar { enabled = false }
