@@ -12,6 +12,7 @@ spring:
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
+    throw-exception-if-no-handler-found: true
   jackson:
     property-naming-strategy: SNAKE_CASE
   transaction:

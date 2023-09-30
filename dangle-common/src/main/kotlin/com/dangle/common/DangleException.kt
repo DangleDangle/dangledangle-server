@@ -1,7 +1,7 @@
 package com.dangle.common
 
 class DangleException(
-    errorCode: DangleErrorCode,
-    debug: String? = null,
-    throwable: Throwable? = null,
+    val errorCode: DangleErrorCode,
+    val debug: String? = null,
+    val throwable: Throwable? = null,
 ) : RuntimeException("$errorCode${debug?.let { " - $it" }}", throwable)
