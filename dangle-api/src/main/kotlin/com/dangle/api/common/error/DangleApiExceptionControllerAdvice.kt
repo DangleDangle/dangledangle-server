@@ -45,7 +45,7 @@ class DangleApiExceptionControllerAdvice(
 
     private fun DangleErrorCode.httpStatusCode(): HttpStatusCode{
         return when (value) {
-            in 4000 until 4100 -> HttpStatus.NOT_FOUND
+            in 4000 until 4100 -> HttpStatus.BAD_REQUEST
             in 4100 until 4200 -> HttpStatus.NOT_FOUND
             in 5000 until 5100 -> HttpStatus.INTERNAL_SERVER_ERROR
             else -> HttpStatus.INTERNAL_SERVER_ERROR
