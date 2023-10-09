@@ -1,0 +1,15 @@
+name: Pull Requests
+
+on:
+  # https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#pull_request
+  pull_request:
+    types: [ opened, reopened, ready_for_review ]
+
+jobs:
+  auto-assign:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Auto assign for PR
+        uses: kentaro-m/auto-assign-action@v1.2.5
+        with:
+          configuration-path: .github/pull_request_auto_assign.yml
