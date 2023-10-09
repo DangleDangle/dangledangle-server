@@ -59,6 +59,7 @@ subprojects {
         implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core")
         implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactive")
         implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
+        api("com.fasterxml.jackson.module:jackson-module-kotlin")
         annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
         testImplementation("org.springframework.boot:spring-boot-starter-test")
     }

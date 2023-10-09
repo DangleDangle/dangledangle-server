@@ -26,4 +26,4 @@ class ShelterBookMarkEntity(
 
     @Column(name = "volunteer_id", nullable = false)
     val volunteerId: Long
-) : BaseTimeEntity()
+)
