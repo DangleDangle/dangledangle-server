@@ -1,7 +1,9 @@
 package com.dangle.usecase.notification.port.`in`
 
 import com.dangle.usecase.notification.port.out.KakaoNotificationPort
+import org.springframework.stereotype.Service
 
+@Service
 class SendNotificationCommand(
     private val kakaoNotificationPort: KakaoNotificationPort,
 ) : SendNotificationCommandUseCase {

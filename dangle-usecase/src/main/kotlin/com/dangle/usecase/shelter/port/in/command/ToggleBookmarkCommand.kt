@@ -2,7 +2,9 @@ package com.dangle.usecase.shelter.port.`in`.command
 
 import com.dangle.domain.shelter.ShelterBookMark
 import com.dangle.usecase.shelter.port.out.ShelterRepositoryPort
+import org.springframework.stereotype.Service
 
+@Service
 class ToggleBookmarkCommand(
     private val shelterRepositoryPort: ShelterRepositoryPort,
 ): ToggleBookmarkCommandUseCase {
