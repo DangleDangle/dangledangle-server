@@ -19,14 +19,18 @@ object ShelterMapper {
             notice = entity.notice,
             profileImageUrl = entity.profileImageUrl,
             address = entity.address.toDomain(),
-            bankAccount = runCatching { BankAccount(
-                name = entity.bankName!!,
-                accountNumber = entity.bankAccountNum!!,
-            ) }.getOrNull(),
-            parkingInfo = runCatching { ShelterParkingInfo(
-                parkingEnabled = entity.parkingEnabled!!,
-                parkingNotice = entity.parkingNotice!!,
-            ) }.getOrNull(),
+            bankAccount = runCatching {
+                BankAccount(
+                    name = entity.bankName!!,
+                    accountNumber = entity.bankAccountNum!!,
+                )
+            }.getOrNull(),
+            parkingInfo = runCatching {
+                ShelterParkingInfo(
+                    parkingEnabled = entity.parkingEnabled!!,
+                    parkingNotice = entity.parkingNotice!!,
+                )
+            }.getOrNull(),
             alarmEnabled = entity.alarmEnabled,
         )
     }

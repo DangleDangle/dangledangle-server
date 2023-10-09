@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service
 @Service
 class GetShelterQuery(
     private val shelterRepositoryPort: ShelterRepositoryPort,
-): GetShelterQueryUseCase {
+) : GetShelterQueryUseCase {
     override fun invoke(shelterId: Long): Shelter {
         return shelterRepositoryPort.findById(shelterId)
     }
