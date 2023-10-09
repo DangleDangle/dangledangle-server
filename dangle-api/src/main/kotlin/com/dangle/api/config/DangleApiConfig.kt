@@ -2,6 +2,7 @@ package com.dangle.api.config
 
 import com.dangle.adapter.http.config.HttpAdapterConfig
 import com.dangle.adapter.persistence.config.RepositoryAdapterConfig
+import com.dangle.adapter.redis.config.EmbeddedRedisConfig
 import com.dangle.adapter.redis.config.RedisConfig
 import com.dangle.api.event.KakaoNotificationRedisListener
 import com.dangle.usecase.notification.port.`in`.SendNotificationCommandUseCase
@@ -16,6 +17,7 @@ import org.springframework.data.redis.listener.RedisMessageListenerContainer
     HttpAdapterConfig::class,
     RepositoryAdapterConfig::class,
     RedisConfig::class,
+    EmbeddedRedisConfig::class,
 )
 @Configuration
 class DangleApiConfig {
