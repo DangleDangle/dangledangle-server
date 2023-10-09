@@ -1,4 +1,3 @@
 package com.dangle.domain.volunteer
 
-class Volunteer {
-}
+class Volunteer
