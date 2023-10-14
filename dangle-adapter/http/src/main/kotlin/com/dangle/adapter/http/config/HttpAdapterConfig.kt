@@ -1,7 +1,7 @@
 package com.dangle.adapter.http.config
 
-import com.dangle.adapter.http.kakao.KakaoNotificationAdapter
-import com.dangle.adapter.http.kakao.KakaoNotificationClient
+import com.dangle.adapter.http.ncp.NcpKakaoNotificationAdapter
+import com.dangle.adapter.http.ncp.NcpKakaoNotificationClient
 import com.dangle.usecase.notification.port.out.KakaoNotificationPort
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
@@ -14,8 +14,8 @@ import org.springframework.context.annotation.Import
 class HttpAdapterConfig {
     @Bean
     fun kakaoNotificationPort(
-        kakaoNotificationClient: KakaoNotificationClient,
+        ncpKakaoNotificationClient: NcpKakaoNotificationClient,
     ): KakaoNotificationPort {
-        return KakaoNotificationAdapter(kakaoNotificationClient)
+        return NcpKakaoNotificationAdapter(ncpKakaoNotificationClient)
     }
 }
