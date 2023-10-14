@@ -1,6 +1,5 @@
 package com.dangle.adapter.persistence.entity
 
-import com.dangle.adapter.persistence.common.BaseTimeEntity
 import jakarta.persistence.Column
 import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue
