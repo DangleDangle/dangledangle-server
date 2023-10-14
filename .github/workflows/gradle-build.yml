@@ -35,10 +35,6 @@ jobs:
 
     - name: Build with Gradle
       run: ./gradlew clean build
-      with:
-        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region: ap-northeast-2
 
     - name: Comment When All Step Was Passed
       uses: peter-evans/create-or-update-comment@v2
