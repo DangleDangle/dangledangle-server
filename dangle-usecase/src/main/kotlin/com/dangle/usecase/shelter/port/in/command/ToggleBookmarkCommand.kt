@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service
 @Service
 class ToggleBookmarkCommand(
     private val shelterRepositoryPort: ShelterRepositoryPort,
-): ToggleBookmarkCommandUseCase {
+) : ToggleBookmarkCommandUseCase {
     override fun invoke(command: ToggleBookmarkCommandUseCase.Command): ShelterBookMark {
         val bookMark = shelterRepositoryPort.findBookMark(
             shelterId = command.shelterId,

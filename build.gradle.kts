@@ -5,6 +5,7 @@ plugins {
 
     id("org.springframework.boot") version "3.1.3"
     id("io.spring.dependency-management") version "1.1.3"
+    id("org.jlleitschuh.gradle.ktlint") version "11.0.0"
     kotlin("jvm") version kotlinVersion
     kotlin("plugin.spring") version kotlinVersion
     kotlin("plugin.jpa") version kotlinVersion
@@ -29,6 +30,7 @@ subprojects {
     apply(plugin = "kotlin-allopen")
     apply(plugin = "org.springframework.boot")
     apply(plugin = "io.spring.dependency-management")
+    apply(plugin = "org.jlleitschuh.gradle.ktlint")
 
     java {
         toolchain {

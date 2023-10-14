@@ -1,7 +1,7 @@
 package com.dangle.usecase.notification.port.`in`
 
 interface SendNotificationCommandUseCase {
-    fun invoke(request : Request)
+    fun invoke(request: Request)
 
     sealed interface Request {
         data class KakaoTalk(
