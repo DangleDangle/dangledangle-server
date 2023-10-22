@@ -2,14 +2,17 @@ package com.dangle.api.v1.shelter
 
 import com.dangle.api.common.resolver.VolunteerAuthentication
 import com.dangle.api.common.resolver.VolunteerAuthenticationInfo
+import com.dangle.api.common.response.ApiResponse
 import com.dangle.usecase.shelter.port.`in`.command.ToggleBookmarkCommandUseCase
 import com.dangle.usecase.shelter.port.`in`.query.GetShelterQueryUseCase
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
+import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
+@RequestMapping("/v1/shelter")
 class ShelterController(
     private val getShelterQueryUseCase: GetShelterQueryUseCase,
     private val toggleBookmarkCommandUseCase: ToggleBookmarkCommandUseCase,
@@ -18,8 +21,8 @@ class ShelterController(
     fun getShelterInfo(
         @PathVariable shelterId: Long,
         @VolunteerAuthentication volunteerInfo: VolunteerAuthenticationInfo?,
-    ): GetShelterResponse {
-        return getShelterQueryUseCase.invoke(shelterId).let {
+    ): ApiResponse<GetShelterResponse> {
+        val response =  getShelterQueryUseCase.invoke(shelterId).let {
             GetShelterResponse(
                 id = it.id,
                 name = it.name,
@@ -37,14 +40,16 @@ class ShelterController(
                 bookMarked = false, // TODO(kang) 북마크 처리 필요
             )
         }
+
+        return ApiResponse.success(response)
     }
 
     @PostMapping("/{shelterId}/bookmark")
     fun bookmarkShelter(
         @PathVariable shelterId: Long,
         @VolunteerAuthentication volunteerInfo: VolunteerAuthenticationInfo
-    ): BookMarkShelterResponse {
-        return toggleBookmarkCommandUseCase.invoke(
+    ): ApiResponse<BookMarkShelterResponse> {
+        val response =  toggleBookmarkCommandUseCase.invoke(
             ToggleBookmarkCommandUseCase.Command(
                 shelterId = shelterId,
                 volunteerId = volunteerInfo.volunteerId,
@@ -56,6 +61,8 @@ class ShelterController(
                 bookMarked = it.bookMarked,
             )
         }
+
+        return ApiResponse.success(response)
     }
 
     data class GetShelterResponse(
