@@ -1,6 +1,6 @@
 package com.dangle.api.config
 
-import com.dangle.adapter.http.config.HttpAdapterConfig
+import com.dangle.adapter.http.config.FeignConfig
 import com.dangle.adapter.persistence.config.RepositoryAdapterConfig
 import com.dangle.adapter.redis.config.EmbeddedRedisConfig
 import com.dangle.adapter.redis.config.RedisConfig
@@ -14,7 +14,7 @@ import org.springframework.data.redis.listener.ChannelTopic
 import org.springframework.data.redis.listener.RedisMessageListenerContainer
 
 @Import(
-    HttpAdapterConfig::class,
+    FeignConfig::class,
     RepositoryAdapterConfig::class,
     RedisConfig::class,
     EmbeddedRedisConfig::class,

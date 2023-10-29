@@ -12,7 +12,7 @@ class SendNotificationCommand(
             is SendNotificationCommandUseCase.Request.KakaoTalk -> {
                 kakaoNotificationPort.send(
                     targetPhoneNumber = request.phoneNumber,
-                    templateName = request.templateName,
+                    templateCode = request.templateName,
                     variables = request.variables,
                 )
             }

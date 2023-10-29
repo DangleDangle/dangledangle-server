@@ -1,3 +1,8 @@
+ncp:
+  access-key: ${NCP_ACCESS_KEY}
+  secrete: ${NCP_SECRET}
+  biz-message-service-id: ${NCP_BIZ_MESSAGE_SERVICE_ID}
+
 ---
 spring:
   config:

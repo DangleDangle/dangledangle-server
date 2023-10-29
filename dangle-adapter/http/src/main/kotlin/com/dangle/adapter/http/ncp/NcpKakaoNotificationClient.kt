@@ -13,8 +13,8 @@ interface NcpKakaoNotificationClient {
     @PostMapping(value = ["services/{serviceId}/messages"])
     fun send(
         @RequestHeader("x-ncp-apigw-timestamp") timestamp: String, // Millisecond
-        @RequestHeader("x-ncp-apigw-x-ncp-iam-access-key") subAccountAccessKey: String,
-        @RequestHeader("x-ncp-apigw-signature-v2") apiGatewaySignature: String, // HmacSHA256
+        @RequestHeader("x-ncp-apigw-x-ncp-iam-access-key") accessKey: String,
+        @RequestHeader("x-ncp-apigw-signature-v2") signature: String, // HmacSHA256
         @PathVariable("serviceId") serviceId: String,
         @RequestBody request: NcpKakaoNotificationRequest
     ): NcpKakaoNotificationResponse

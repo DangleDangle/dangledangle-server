@@ -3,7 +3,7 @@ package com.dangle.usecase.notification.port.out
 interface KakaoNotificationPort {
     fun send(
         targetPhoneNumber: String,
-        templateName: String,
+        templateCode: String,
         variables: Map<String, String>,
     )
 }
